@@ -14,7 +14,7 @@
        <p class="">Please enter the Team A name</p>
        <input type="text" name="teamA" class="" ng-model="teamA"><br>
        <p class="">Please enter the Team B name</p>
-       <input type="text" name="teamB" class="" ng-model="teamB"><br>   
+       <input type="text" name="teamB" class="" ng-model="teamB"><br>
       	<div class="datepickerdemo" ng-controller="dateController as ctrl" layout="column" ng-cloak>
          <md-content>
             <h4>Please select a date</h4>
@@ -23,8 +23,15 @@
                md-placeholder="Enter date"></md-datepicker>
          </md-content>
 	   	</div>
-	   	<p>{{ teamA }}</p>
-	   	<p>{{ teamB }}</p>
+	   	<div ng-show=teamA>
+	   	<p>Enters {{ teamA }}'s Score</p>
+	   	<input type="text" name="teamAScore" class="" ng-model="teamAScore">
+	   	</div>
+	   	<div ng-show=teamB>
+	   	<p ng-show=teamB>Enters {{ teamB }}'s Score</p>
+	   	<input type="text" name="teamBScore" class="" ng-model="teamBScore"><br>
+	   	</div>
+	   	<br>
 	   	<input type="submit" value="Submit">
 	   	</form>
    </body>
