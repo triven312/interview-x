@@ -10,23 +10,22 @@
       <script language="javascript" src="/js/master-controller.js"></script>      
    </head>
    <body ng-app="firstApplication"> 
-    <h3 class="">Tournament Standings</h3>
-    <table>
-    	<tr>
-    		<th>Team Name</th>
-    		<th>Points</th>
-    		<th>Played</th>
-    		<th>Won</th>
-			<th>Lost</th>
-    		<th>Draw</th>
-    	</tr>
-    	<tr>
-    		<td>ManU</td>
-    		<td>8</td>
-    		<td>6</td>
-    		<td>3</td>
-    		<td>1</td>
-    		<td>2</td>    		
-    	</tr>    	
-    </table>
-</body></html>
+			<form name="adminForm" action="submit" method="post">
+       <p class="">Please enter the Team A name</p>
+       <input type="text" name="teamA" class="" ng-model="teamA"><br>
+       <p class="">Please enter the Team B name</p>
+       <input type="text" name="teamB" class="" ng-model="teamB"><br>   
+      	<div class="datepickerdemo" ng-controller="dateController as ctrl" layout="column" ng-cloak>
+         <md-content>
+            <h4>Please select a date</h4>
+            <md-datepicker 
+               ng-model="myDate" 
+               md-placeholder="Enter date"></md-datepicker>
+         </md-content>
+	   	</div>
+	   	<p>{{ teamA }}</p>
+	   	<p>{{ teamB }}</p>
+	   	<input type="submit" value="Submit">
+	   	</form>
+   </body>
+</html>
