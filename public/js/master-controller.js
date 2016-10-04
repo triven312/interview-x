@@ -16,4 +16,10 @@ angular
 	   var day = date.getDay();
 	   return day === 0 || day === 6;
 	}
+	$scope.teams = [
+	{id: 1,label: 'A'},
+	{id: 2,label: 'B'},
+	{id: 3,label: 'C'},
+	{id: 4,label: 'D'},
+	{id: 5,label: 'E'}];
 }                 
