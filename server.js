@@ -52,23 +52,22 @@ app.post('/submit', function(req, res){
         queryB="UPDATE sys.tournament_standings SET matches=matches+1,draw=draw+1 WHERE name='"+req.body.teamB+"'";
       }
     }
+    function updateTeamA(){
+        var defered = Q.defer();
+        connection.query(queryA,defered.makeNodeResolver());
+        return defered.promise;
+    }  
+    function updateTeamB(){
+        var defered = Q.defer();
+        connection.query(queryB,defered.makeNodeResolver());
+        return defered.promise;
+    }
+    Q.all([updateTeamA(),updateTeamB()]).then(function(results){
+      var output = "";
+      output=output+("<br><p>Thankyou for the submission</p><br>");
+      res.status(200).send(output);
+    });
   });
-  function updateTeamA(){
-      var defered = Q.defer();
-      connection.query(queryA,defered.makeNodeResolver());
-      return defered.promise;
-  }  
-  function updateTeamB(){
-      var defered = Q.defer();
-      connection.query(queryB,defered.makeNodeResolver());
-      return defered.promise;
-  }
-  Q.all([updateTeamA(),updateTeamB()]).then(function(results){
-    var output = "";
-    output=output+("<br><p>Thankyou for the submission</p><br>");
-    res.status(200).send(output);
-  });
-
 });
 
 require('http').createServer(app).listen(3000, function(){
