@@ -4,6 +4,7 @@
   "dependencies": {
     "express": "^4.11.0",
     "mysql": "^2.1.11",
-    "body-parser": "^1.15.2"
+    "body-parser": "^1.15.2",
+    "q": "0.9.3"
   }
 }
