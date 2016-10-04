@@ -1,0 +1,9 @@
+{
+  "name": "express-html",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.11.0",
+    "mysql": "^2.1.11",
+    "body-parser": "^1.15.2"
+  }
+}
