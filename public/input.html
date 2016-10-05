@@ -10,12 +10,34 @@
       <script language="javascript" src="/js/master-controller.js"></script>      
    </head>
    <body ng-app="firstApplication"> 
-			<form name="adminForm" action="submit" method="post">
-       <p class="">Please select the Team A name</p>
-        <select ng-options="team.label for team in teams" ng-model="teamA"></select>
+			<form name="adminForm" action="submit" method="post" id="form">
+       <p class="">Please select the Team 1 name</p>
+        <select ng-model="teamA" form="form">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+          <option value="G">G</option>
+          <option value="H">H</option>
+          <option value="I">I</option>
+          <option value="J">J</option>          
+        </select>
        <br>
-       <p class="">Please select the Team B name</p>
-       <select ng-options="team.label for team in teams" ng-model="teamB"></select>
+       <p class="">Please select the Team 2 name</p>
+        <select ng-model="teamB" form="form">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+          <option value="G">G</option>
+          <option value="H">H</option>
+          <option value="I">I</option>
+          <option value="J">J</option>          
+        </select>
        <br>
       	<div class="datepickerdemo" ng-controller="dateController as ctrl" layout="column" ng-cloak>
          <md-content>
@@ -26,11 +48,11 @@
          </md-content>
 	   	</div>
 	   	<div ng-show=teamA>
-	   	<p>Enters {{ teamA.label }}'s Score</p>
+	   	<p>Enters {{ teamA }}'s Score</p>
 	   	<input type="text" name="teamAScore" class="" ng-model="teamAScore">
 	   	</div>
 	   	<div ng-show=teamB>
-	   	<p ng-show=teamB>Enters {{ teamB.label }}'s Score</p>
+	   	<p ng-show=teamB>Enters {{ teamB }}'s Score</p>
 	   	<input type="text" name="teamBScore" class="" ng-model="teamBScore"><br>
 	   	</div>
 	   	<br>

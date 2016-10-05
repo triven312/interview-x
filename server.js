@@ -14,7 +14,7 @@ var pool  = mysql.createPool({
 });
 
 app.use(bodyParser.urlencoded({
-        extended: true
+  extended: true
 }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -63,6 +63,7 @@ app.post('/submit', function(req, res){
         return defered.promise;
     }
     Q.all([updateTeamA(),updateTeamB()]).then(function(results){
+      connection.release();
       var output = "";
       output=output+("<br><p>Thankyou for the submission</p><br>");
       res.status(200).send(output);
