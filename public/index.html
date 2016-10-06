@@ -7,9 +7,9 @@
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
       <link rel="stylesheet" href="/css/main.css">
-      <script language="javascript" src="/js/master-controller.js"></script>      
+      <script language="javascript" src="js/master-controller.js"></script>      
    </head>
-   <body ng-app="firstApplication"> 
+   <body ng-app="firstApplication" ng-controller="dateController" ng-init="getTableData();"> 
     <h3 class="">Tournament Standings</h3>
     <table>
     	<tr>
@@ -20,13 +20,13 @@
 			<th>Lost</th>
     		<th>Draw</th>
     	</tr>
-    	<tr>
-    		<td>ManU</td>
-    		<td>8</td>
-    		<td>6</td>
-    		<td>3</td>
-    		<td>1</td>
-    		<td>2</td>    		
-    	</tr>    	
+      <tr ng-repeat="x in tableData">
+        <td> {{ x.name }} </td>
+        <td> {{x.points}} </td>
+        <td> {{ x.matches}} </td>
+        <td> {{ x.won }} </td>
+        <td> {{ x.lost }} </td>
+        <td> {{ x.draw }} </td>
+      </tr>      
     </table>
 </body></html>
