@@ -25,3 +25,5 @@ I administer a soccer league and I'd like a web application to track team names 
 * In admin view the admin can select a drop down of teams(fixed set of teams in create_table for simplicity) played the match and can also enter the score for simplicity not considering boundary cases like penality shootouts
 * The admin user can then click on the `Submit` button
 * The admin or the evaluator can check for the change in the team standings in the public view "localhost:3000"
+
+* Note: Tournament Scoring is like this Win => 2 points, Loss => 0, Draw => 1 point

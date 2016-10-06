@@ -36,13 +36,13 @@ app.get('/getTableData', function(req, res){
 app.post('/submit', function(req, res){
   pool.getConnection(function(err, connection) {
     if(req.body.teamAScore > req.body.teamBScore){
-      console.log("Team A is the winner");
+        console.log(req.body.teamA," is the winner");
         queryA="UPDATE sys.tournament_standings SET points=points+2,matches=matches+1,won=won+1 WHERE name='"+req.body.teamA+"'";
         queryB="UPDATE sys.tournament_standings SET matches=matches+1,lost=lost+1 WHERE name='"+req.body.teamB+"'";
     }
     else{
       if(req.body.teamBScore > req.body.teamAScore){
-        console.log("Team B is the winner");
+        console.log(req.body.teamB," is the winner");
         queryA="UPDATE sys.tournament_standings SET matches=matches+1,lost=lost+1 WHERE name='"+req.body.teamA+"'";
         queryB="UPDATE sys.tournament_standings SET points=points+2,matches=matches+1,won=won+1 WHERE name='"+req.body.teamB+"'";
       }

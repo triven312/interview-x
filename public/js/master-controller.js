@@ -17,11 +17,21 @@ angular
 	   var day = date.getDay();
 	   return day === 0 || day === 6;
 	};
-	$scope.teams = [{id: 1,label: 'A'},{id: 2,label: 'B'},{id: 3,label: 'C'},{id: 4,label: 'D'},{id: 5,label: 'E'}];
+	$scope.teams = [
+	{id: 1,label: 'A'},
+	{id: 2,label: 'B'},
+	{id: 3,label: 'C'},
+	{id: 4,label: 'D'},
+	{id: 5,label: 'E'},
+	{id: 6,label: 'F'},
+	{id: 7,label: 'G'},
+	{id: 8,label: 'H'},
+	{id: 9,label: 'I'},
+	{id: 10,label: 'J'}	
+	];
     $scope.getTableData = function(){
       $http.get("http://localhost:3000/getTableData")
       .then(function (response) {
-      	console.log(response);
       	$scope.tableData = response.data;});
     };
 }                 
